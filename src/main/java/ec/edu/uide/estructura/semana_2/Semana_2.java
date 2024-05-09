@@ -65,11 +65,11 @@ public class Semana_2 {
      */
     public int[] ordenamientoBurbuja(int[] arr) {
         int n = arr.length; // Tamaño del arreglo
-        boolean swapped; // Bandera para controlar si se hicieron intercambios en una pasada
+        boolean huboIntercambio; // Bandera para controlar si se hicieron intercambios en una pasada
 
         // Realizar pasadas sobre el arreglo
         for (int i = 0; i < n - 1; i++) {
-            swapped = false; // Inicialmente no se han hecho intercambios
+            huboIntercambio = false; // Inicialmente no se han hecho intercambios
 
             // Comparar elementos adyacentes y hacer intercambios si es necesario
             for (int j = 0; j < n - i - 1; j++) {
@@ -78,12 +78,12 @@ public class Semana_2 {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    swapped = true; // Marcar que se ha hecho un intercambio
+                    huboIntercambio = true; // Marcar que se ha hecho un intercambio
                 }
             }
 
             // Si no se hicieron intercambios, el arreglo ya está ordenado
-            if (!swapped) {
+            if (!huboIntercambio) {
                 break;
             }
         }
