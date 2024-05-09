@@ -37,7 +37,7 @@ public class Semana_2 {
             System.out.println(arreglo2[i]);
         }*/
 
-        // implementaciop optimizada
+        // implementacion optimizada
         for (int dato : arr) {
             System.out.println(dato);
         }
@@ -59,6 +59,23 @@ public class Semana_2 {
     }
 
     /**
+     * 
+     * 
+     * 
+     * 
+     * 
+     números desordenados: [5, 3, 8, 4, 2]
+
+    Primera pasada:
+    Compara 5 y 3, intercambia porque 5 > 3. Resultado: [3, 5, 8, 4, 2, 9]
+    Compara 5 y 8, no intercambia porque 5 < 8. Resultado: [3, 5, 8, 4, 2]
+    Compara 8 y 4, intercambia porque 8 > 4. Resultado: [3, 5, 4, 8, 2]
+    Compara 8 y 2, intercambia porque 8 > 2. Resultado: [3, 5, 4, 2, 8]
+         
+    Pasadas sucesivas:
+    Repite el proceso, cada vez ignorando el último elemento puesto que ya está en su lugar correcto.
+    Continúa hasta que no se necesiten intercambios o hasta que cada elemento haya sido "burbujeado" a su posición correcta.
+
      * Ordena un arreglo utilizando el algoritmo de ordenamiento burbuja.
      * @param arr Arreglo de enteros que será ordenado.
      * @return Arreglo ordenado.
