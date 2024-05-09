@@ -83,6 +83,8 @@ public class Semana_2 {
             }
 
             // Si no se hicieron intercambios, el arreglo ya está ordenado
+            // Optimización: La condición if (!huboIntercambio) comprueba si se hicieron intercambios en la pasada actual. 
+            // Si no se hicieron intercambios, el arreglo ya está ordenado y se puede terminar el algoritmo.
             if (!huboIntercambio) {
                 break;
             }
@@ -99,22 +101,22 @@ public class Semana_2 {
      * @return La posición del valor buscado en el arreglo, o -1 si el valor no se encuentra.
      */
     public static int busquedaBinaria(int[] arr, int clave) {
-        int left = 0;              // Inicio del rango de búsqueda
-        int right = arr.length - 1; // Fin del rango de búsqueda
+        int izquierda = 0;              // Inicio del rango de búsqueda
+        int derecha = arr.length - 1; // Fin del rango de búsqueda
 
-        while (left <= right) {
-            int mid = left + (right - left) / 2; // Calcular el punto medio para evitar overflow
+        while (izquierda <= derecha) {
+            int medio = izquierda + (derecha - izquierda) / 2; // Calcular el punto medio para evitar overflow
 
             // Verificar si el elemento está en la posición mid
-            if (arr[mid] == clave) {
-                return mid; // Elemento encontrado
+            if (arr[medio] == clave) {
+                return medio; // Elemento encontrado
             }
 
             // Decidir si buscar en la mitad izquierda o derecha
-            if (arr[mid] < clave) {
-                left = mid + 1; // Buscar en la mitad derecha
+            if (arr[medio] < clave) {
+                izquierda = medio + 1; // Buscar en la mitad derecha
             } else {
-                right = mid - 1; // Buscar en la mitad izquierda
+                derecha = medio - 1; // Buscar en la mitad izquierda
             }
         }
 
